@@ -1,0 +1,26 @@
+<section class="bg-light pt-5 text-secondary">
+  <h1 class="display-4 fw-bold mb-3 text-center text-dark">Ejecución sincrona</h1>
+
+
+  <div class="container">
+    <div class="align-items-center row">
+      <div class="col-lg-6 mb-5">
+        <div *ngIf="robot == true">
+          <p class="fw-light lead mb-4">Ejemplo de ejecución sincrona de google recaptcha
+          </p><button (click)="getInfoRecaptcha()" class="btn btn-primary">
+          Mi Ubicación</button>
+        </div>
+      </div>
+      <div class="col-lg-6">
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="robot == true">
+    <p>De momento eres un robot, presiona el botón</p>
+  </div>
+  <div *ngIf="robot == false">
+    <p>No eres un robot</p>
+  </div>
+
+</section>
