@@ -27,6 +27,7 @@ export class SincronoComponent implements OnInit {
     this.presionado = true;
     this.recaptchaV3Service.execute('')
       .subscribe((token) => {
+
         const auxiliar = this.captchaSerice.getToken(token)
         if (  auxiliar.includes('true') ) {
           this.robot = false;
