@@ -11,12 +11,10 @@ import {catchError, map} from "rxjs/operators";
 })
 export class RecaptchaService {
 
-  public isBrowser  = false;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object,     private http: HttpClient) {
-    if (isPlatformBrowser(platformId)) {
-      this.isBrowser = true;
-    }
+
+  constructor( private http: HttpClient) {
+
   }
 
   /*
@@ -25,14 +23,11 @@ export class RecaptchaService {
   return string
    */
   getToken(token: string): string {
-    if  (this.isBrowser == true){
       const xhr = new XMLHttpRequest();
       xhr.open('POST', 'http://0.0.0.0:5000/api/v1/verificar/'+token+'/', false);
       xhr.send();
       return  xhr.responseText ;
-    } else {
-      return 'false'
-    }
+
   }
 
 
